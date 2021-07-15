@@ -1,23 +1,28 @@
 import Landing from "./pages/Landing";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Weather from "./pages/Weather";
+import Error from "./pages/Error";
+import Searchbar from "./components/Searchbar";
+import "weather-icons/css/weather-icons.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    // <Route>
-    //   <NavBar />
-    //   <Switch>
-    //     <Route exact path="/">
-    //       <Landing />
-    //     </Route>
-    //     <Route path="/:id">
-    //       <Location />
-    //     </Route>
-    //     <Route path="*">
-    //       <Error />
-    //     </Route>
-    //   </Switch>
-    // </Route>
-    <Landing />
+    <Router>
+      <div className="app">
+        <Searchbar />
+        <Switch>
+          {/* <Route exact path="/">
+            <Landing />
+          </Route> */}
+          <Route path="/">
+            <Weather />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
