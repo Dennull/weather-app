@@ -1,6 +1,6 @@
 import React from "react";
 
-const Searchbar = () => {
+const Searchbar = ({ getWeather }) => {
   return (
     <section>
       <form>
@@ -9,7 +9,7 @@ const Searchbar = () => {
         <label htmlFor="country">Country</label>
         <input type="text" id="country"></input>
       </form>
-      <button>Go</button>
+      <button onClick={getWeather}>Go</button>
     </section>
   );
 };
