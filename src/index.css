@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +13,7 @@ html {
 /* General */
 
 body {
+  font-family: "Open Sans", sans-serif;
   height: 100%;
   color: white;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -22,6 +25,19 @@ body {
 
 section {
   padding: 2rem;
+}
+
+h2,
+i {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+ul {
+  font-size: 1.1rem;
 }
 
 /* Search Bar */
@@ -75,7 +91,7 @@ form button:hover {
     "weather-condition .";
   width: fit-content;
   margin: 0 auto 1em;
-  gap: 0 1em;
+  gap: 0.5em 1em;
 }
 
 .weather-icon {
