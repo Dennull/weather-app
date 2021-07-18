@@ -14,11 +14,12 @@ function App() {
   const getWeather = async (e) => {
     e.preventDefault();
     const api_call = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Toronto,ca&appid=${api_key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${api_key}`
     );
     const response = await api_call.json();
     setWeatherData(response);
     console.log(weatherData);
+    console.log(city, country);
   };
 
   return (
