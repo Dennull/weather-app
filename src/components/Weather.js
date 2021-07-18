@@ -1,36 +1,26 @@
 import React from "react";
+import ExtraWeatherInfo from "./ExtraWeatherInfo";
 
 const Weather = ({ weatherData }) => {
   const convertTemp = (temp_kelvin) => {
     return Math.floor(temp_kelvin - 273.15);
   };
 
-  const convertWind = (wind_ms) => {
-    const wind_kh = wind_ms * 3.6;
-    return wind_kh.toFixed(2);
-  };
-
   return (
-    <section>
-      <h2>
+    <section className="weather-info">
+      <h2 className="location">
         {weatherData.name}, {weatherData.sys.country}
       </h2>
-      <div>
-        <i className={`wi wi-owm-${weatherData.weather[0].id}`}></i>
-        <h3>{convertTemp(weatherData.main.temp)}</h3>
-        <p>Feels like {convertTemp(weatherData.main.feels_like)}</p>
+      <div className="weather-main">
+        <i
+          className={`wi wi-owm-${weatherData.weather[0].id} weather-icon`}
+        ></i>
+        <p className="weather-condition">{weatherData.weather[0].main}</p>
+        <h3 className="temperature">
+          {convertTemp(weatherData.main.temp)}&deg;C
+        </h3>
       </div>
-      <div>
-        <p>
-          Low/High: {convertTemp(weatherData.main.temp_min)}/
-          {convertTemp(weatherData.main.temp_max)}
-        </p>
-        <p>Wind: {convertWind(weatherData.wind.speed)} km/hr</p>
-        <p>Pressure: {weatherData.main.pressure} hPa</p>
-        <p>Humidity: {weatherData.main.humidity}%</p>
-        {/* <p>Sunrise: {weatherData.sys.sunrise}</p> */}
-        {/* <p>Sunset: {weatherData.sys.sunset}</p> */}
-      </div>
+      <ExtraWeatherInfo weatherData={weatherData} convertTemp={convertTemp} />
     </section>
   );
 };

@@ -57,3 +57,44 @@ form button:hover {
   cursor: pointer;
   background-color: blueviolet;
 }
+
+/* Weather Info */
+
+.weather-info {
+  text-align: center;
+}
+
+.location {
+  margin-bottom: 1.5em;
+}
+
+.weather-main {
+  display: grid;
+  grid-template-areas:
+    "weather-icon temperature"
+    "weather-condition .";
+  width: fit-content;
+  margin: 0 auto 1em;
+  gap: 0 1em;
+}
+
+.weather-icon {
+  grid-area: weather-icon;
+}
+
+.weather-condition {
+  grid-area: weather-condition;
+}
+
+.temperature {
+  grid-area: temperature;
+}
+
+.weather-extra {
+  list-style: none;
+  margin-top: 2em;
+}
+
+.weather-extra li {
+  margin: 1em;
+}
