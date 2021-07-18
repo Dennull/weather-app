@@ -7,18 +7,20 @@ const ExtraWeatherInfo = ({ weatherData, convertTemp }) => {
   };
 
   return (
-    <ul className="weather-extra">
-      <li>Feels like {convertTemp(weatherData.main.feels_like)}&deg;</li>
-      <li>
-        Low/High: {convertTemp(weatherData.main.temp_min)}&deg;/
-        {convertTemp(weatherData.main.temp_max)}&deg;
-      </li>
-      <li>Wind: {convertWind(weatherData.wind.speed)} km/hr</li>
-      <li>Pressure: {weatherData.main.pressure} hPa</li>
-      <li>Humidity: {weatherData.main.humidity}%</li>
-      {/* <p>Sunrise: {weatherData.sys.sunrise}</p> */}
-      {/* <p>Sunset: {weatherData.sys.sunset}</p> */}
-    </ul>
+    <div>
+      <ul className="weather-extra">
+        <li>Feels like {convertTemp(weatherData.main.feels_like)}&deg;</li>
+        <li>
+          Low/High: {convertTemp(weatherData.main.temp_min)}&deg;/
+          {convertTemp(weatherData.main.temp_max)}&deg;
+        </li>
+        <li>Wind: {convertWind(weatherData.wind.speed)} km/hr</li>
+        <li>Pressure: {weatherData.main.pressure} hPa</li>
+        <li>Humidity: {weatherData.main.humidity}%</li>
+        {/* <p>Sunrise: {weatherData.sys.sunrise}</p> */}
+        {/* <p>Sunset: {weatherData.sys.sunset}</p> */}
+      </ul>
+    </div>
   );
 };
 

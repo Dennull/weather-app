@@ -6,11 +6,11 @@
   box-sizing: border-box;
 }
 
+/* General */
+
 html {
   height: 100%;
 }
-
-/* General */
 
 body {
   font-family: "Open Sans", sans-serif;
