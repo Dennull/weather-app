@@ -10,16 +10,24 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
+  const [searchError, setSearchError] = useState(false);
 
   const getWeather = async (e) => {
     e.preventDefault();
-    const api_call = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${api_key}`
-    );
-    const response = await api_call.json();
-    setWeatherData(response);
+    if (city && country) {
+      try {
+        const api_call = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${api_key}`
+        );
+        const response = await api_call.json();
+        setWeatherData(response);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      setSearchError(true);
+    }
     console.log(weatherData);
-    console.log(city, country);
   };
 
   return (
@@ -30,6 +38,7 @@ function App() {
         country={country}
         setCountry={setCountry}
         getWeather={getWeather}
+        searchError={searchError}
       />
       {weatherData ? <Weather weatherData={weatherData} /> : null}
       {/* <Error /> */}
