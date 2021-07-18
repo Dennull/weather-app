@@ -4,15 +4,56 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
+/* General */
+
 body {
   height: 100%;
   color: white;
-}
-
-.app {
-  background-image: url("./images/Mountain.jpg");
-  height: 100%;
-  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./images/Mountain.jpg");
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+section {
+  padding: 2rem;
+}
+
+/* Search Bar */
+
+form {
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 0;
+  margin: 0 2em;
+}
+
+input[type="text"]::placeholder {
+  color: white;
+}
+
+form button {
+  padding: 5px 15px;
+  margin-left: 2em;
+  color: white;
+  background-color: #696969;
+  border: 2px solid whitesmoke;
+  border-radius: 3px;
+  transition: 500ms;
+}
+
+form button:hover {
+  cursor: pointer;
+  background-color: blueviolet;
 }

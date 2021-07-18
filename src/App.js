@@ -11,9 +11,10 @@ function App() {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
 
-  const getWeather = async () => {
+  const getWeather = async (e) => {
+    e.preventDefault();
     const api_call = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Calgary,ca&appid=${api_key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=Toronto,ca&appid=${api_key}`
     );
     const response = await api_call.json();
     setWeatherData(response);
@@ -21,7 +22,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <>
       <Searchbar
         city={city}
         setCity={setCity}
@@ -31,7 +32,7 @@ function App() {
       />
       {weatherData ? <Weather weatherData={weatherData} /> : null}
       {/* <Error /> */}
-    </div>
+    </>
   );
 }
 
