@@ -118,3 +118,10 @@ form button:hover {
 .weather-extra li {
   margin: 1em;
 }
+
+/* Error */
+
+.error-component {
+  margin-top: 3em;
+  text-align: center;
+}
