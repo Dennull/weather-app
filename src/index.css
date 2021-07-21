@@ -119,6 +119,13 @@ form button:hover {
   margin: 1em;
 }
 
+/* Loading */
+
+.loading-component {
+  margin-top: 3em;
+  text-align: center;
+}
+
 /* Error */
 
 .error-component {
